@@ -1,5 +1,6 @@
 extends Node
 
+
 var current_scene
 
 var select_sound = preload("res://sounds/ui/ui_select.tscn")
@@ -9,6 +10,7 @@ var cancel_sound = preload("res://sounds/ui/ui_cancel.tscn")
 var sfx_select
 var sfx_confirm
 var sfx_cancel
+
 
 func _ready():
     pause_mode = Node.PAUSE_MODE_PROCESS

@@ -4,8 +4,5 @@
 
 [node name="AudioSelect" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+volume_db = -15.0
 bus = "Sound"
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Node2" type="Node" parent="."]

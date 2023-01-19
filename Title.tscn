@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sprites/Title.png" type="Texture" id=1]
 [ext_resource path="res://sprites/buttons/fullscreen.png" type="Texture" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://sprites/buttons/fullscreen_mo.png" type="Texture" id=6]
 [ext_resource path="res://sprites/buttons/newgame.png" type="Texture" id=7]
 [ext_resource path="res://sprites/titleword2.png" type="Texture" id=8]
+[ext_resource path="res://Title.gd" type="Script" id=9]
 
 [node name="Title" type="Node"]
+script = ExtResource( 9 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -104,3 +106,10 @@ margin_left = 880.0
 margin_right = 1920.0
 margin_bottom = 192.0
 texture = ExtResource( 8 )
+
+[connection signal="mouse_entered" from="VBoxContainer/Mid/Main Menu/NewGame" to="." method="_on_NewGame_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Mid/Main Menu/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Mid/Main Menu/Options" to="." method="_on_Options_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Mid/Main Menu/Options" to="." method="_on_Options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Mid/Main Menu/FullScreen" to="." method="_on_FullScreen_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Mid/Main Menu/FullScreen" to="." method="_on_FullScreen_pressed"]
