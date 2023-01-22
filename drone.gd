@@ -3,7 +3,7 @@ extends KinematicBody2D
 var direction_to_mouse
 var velocity = Vector2()
 var accel = -10
-var resistance = 0.00001
+var resistance = 0.00002
 
 func _ready():
     $AnimatedSprite.play()
@@ -21,8 +21,8 @@ func get_thrust_vector():
     return Vector2(accel, 0).rotated(direction_to_mouse)
     
 func get_drag_vector(velocity):
-    var speed = velocity.length()
-    if speed < 200:
+    var speed = velocity.length() - 200 # we don't apply drag below a certain speed
+    if speed < 0:
         return Vector2(0, 0)
     var drag = speed * speed * resistance
     var drag_vector = -1 * velocity.normalized() * drag
