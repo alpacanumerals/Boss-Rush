@@ -1,3 +1,17 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Drone.tscn" type="PackedScene" id=1]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Drone" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1021, 558 )
+
+[node name="Drone2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 524, 560 )
+
+[node name="Drone3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1057, 324 )
+
+[node name="Drone4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 541, 232 )
