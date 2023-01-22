@@ -22,6 +22,8 @@ func get_thrust_vector():
     
 func get_drag_vector(velocity):
     var speed = velocity.length()
+    if speed < 200:
+        return Vector2(0, 0)
     var drag = speed * speed * resistance
     var drag_vector = -1 * velocity.normalized() * drag
     return drag_vector
