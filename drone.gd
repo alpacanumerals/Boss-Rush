@@ -3,7 +3,7 @@ extends KinematicBody2D
 var direction_to_mouse
 var velocity = Vector2()
 var accel = -10
-var resistance = 0.0001
+var resistance = 0.00001
 
 func _ready():
     $AnimatedSprite.play()
@@ -13,6 +13,7 @@ func _physics_process(delta):
     
     velocity = velocity + get_thrust_vector()
     velocity = velocity + get_drag_vector(velocity)
+    velocity = velocity.limit_length(500) # this shouldn't normally matter much unless you turn off drag
     
     velocity = move_and_slide(velocity)
 
