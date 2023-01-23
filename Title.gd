@@ -50,4 +50,4 @@ func _on_NewGame_mouse_entered():
 
 func _on_NewGame_pressed():
     sounds.ui_confirm()
-    #switcher.switch_scene("res://main/Game.tscn")
+    switcher.switch_scene("res://Main.tscn")
