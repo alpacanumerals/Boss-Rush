@@ -1,10 +1,6 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+const drone = preload("res://Drone.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +10,8 @@ func _input(event):
     if event is InputEventKey and event.pressed:
         if event.scancode == KEY_F:
             shoot_drone_at_train()
+        if event.scancode == KEY_A:
+            add_drone()
 
 func shoot_drone_at_train(): # this will be refactored into something more sensible later. it's exploratory
     var train_pos = $Train.get_global_position()
@@ -26,3 +24,8 @@ func shoot_drone_at_train(): # this will be refactored into something more sensi
             drone.assign_target(train_pos)
             drone_dispatched = true
         i += 1
+
+func add_drone():
+    var d = drone.instance()
+    add_child(d)
+    d.set_position(Vector2(0, 0))

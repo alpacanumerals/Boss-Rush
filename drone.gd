@@ -22,12 +22,18 @@ func _physics_process(delta):
     velocity = velocity + get_drag_vector(velocity)
     velocity = velocity.limit_length(speed_limit)
     
-    velocity = move_and_slide(velocity)
+    var collision = move_and_collide(velocity * delta)
+    if collision:
+        handle_collision()
 
 func assign_target(new_target):
     accel = -20
     speed_limit = 1000
     target = new_target
+
+func handle_collision():
+        print("Wham!")
+        queue_free()
 
 func get_thrust_vector():
     return Vector2(accel, 0).rotated(direction_to_target)
