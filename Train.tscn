@@ -26,6 +26,8 @@ animations = [ {
 
 [node name="Train" type="KinematicBody2D"]
 position = Vector2( 261, 138 )
+collision_layer = 4
+collision_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

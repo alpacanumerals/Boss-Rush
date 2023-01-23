@@ -30,6 +30,9 @@ func assign_target(new_target):
     accel = -20
     speed_limit = 1000
     target = new_target
+    # this next is janky and maybe better handled by toggling collision shape or whatever
+    # NOTE: layer in UI is layer in code +1. the below code modifies layer #3
+    set_collision_mask_bit(2, true)
 
 func handle_collision():
         print("Wham!")
