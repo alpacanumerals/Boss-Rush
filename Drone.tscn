@@ -1,10 +1,21 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://sprites/droneparts/drive01.png" type="Texture" id=1]
 [ext_resource path="res://drone.gd" type="Script" id=2]
 [ext_resource path="res://sprites/droneparts/body01.png" type="Texture" id=3]
 [ext_resource path="res://sprites/droneparts/battery01.png" type="Texture" id=4]
 [ext_resource path="res://sprites/droneparts/bomb01.png" type="Texture" id=5]
+[ext_resource path="res://sprites/droneparts/battery02.png" type="Texture" id=6]
+[ext_resource path="res://sprites/droneparts/battery04.png" type="Texture" id=7]
+[ext_resource path="res://sprites/droneparts/body04.png" type="Texture" id=8]
+[ext_resource path="res://sprites/droneparts/drive03.png" type="Texture" id=9]
+[ext_resource path="res://sprites/droneparts/body02.png" type="Texture" id=10]
+[ext_resource path="res://sprites/droneparts/warhead01.png" type="Texture" id=11]
+[ext_resource path="res://sprites/droneparts/body03.png" type="Texture" id=12]
+[ext_resource path="res://sprites/droneparts/drive02.png" type="Texture" id=13]
+[ext_resource path="res://sprites/droneparts/drive04.png" type="Texture" id=14]
+[ext_resource path="res://sprites/droneparts/battery03.png" type="Texture" id=15]
+[ext_resource path="res://sprites/droneparts/gun01.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 4 )
@@ -14,11 +25,41 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 8 )
 
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 16, 8 )
+
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "body1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "body2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "body3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "body4",
 "speed": 5.0
 } ]
 
@@ -52,11 +93,116 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 80, 0, 16, 8 )
 
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 16, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 48, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 80, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 32, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 48, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 64, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 80, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 16, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 32, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 48, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 64, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 80, 0, 16, 8 )
+
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "default",
+"name": "drive1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "drive2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "drive3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "drive4",
 "speed": 5.0
 } ]
 
@@ -65,11 +211,41 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 16, 8 )
 
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 8 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ SubResource( 11 ) ],
 "loop": true,
-"name": "default",
+"name": "batt1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ) ],
+"loop": true,
+"name": "batt2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 38 ) ],
+"loop": true,
+"name": "batt3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 39 ) ],
+"loop": true,
+"name": "batt4",
 "speed": 5.0
 } ]
 
@@ -82,7 +258,17 @@ region = Rect2( 0, 0, 16, 8 )
 animations = [ {
 "frames": [ SubResource( 15 ) ],
 "loop": true,
-"name": "default",
+"name": "bomb",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "warhead",
 "speed": 5.0
 } ]
 
@@ -99,14 +285,18 @@ shape = SubResource( 1 )
 
 [node name="BodySprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+animation = "body4"
 
 [node name="DriveSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
+animation = "drive4"
 speed_scale = 5.0
 
 [node name="BatterySprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 12 )
+animation = "batt4"
 
 [node name="WeaponSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 8 )
 frames = SubResource( 14 )
+animation = "warhead"

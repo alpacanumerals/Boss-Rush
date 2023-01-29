@@ -8,9 +8,17 @@ var speed_limit = 500
 
 var target = null
 
+const bodies = ["body1", "body2", "body3", "body4"]
+const drives = ["drive1", "drive2", "drive3", "drive4"]
+const batteries = ["batt1", "batt2", "batt3", "batt4"]
+const weapons = ["bomb", "gun", "warhead"]
+
 func _ready():
     add_to_group("drones")
-    $DriveSprite.play()
+    $BodySprite.play(bodies[randi() % 4])
+    $DriveSprite.play(drives[randi() % 4])
+    $BatterySprite.play(batteries[randi() % 4])
+    $WeaponSprite.play(weapons[randi() % 3])
 
 func _physics_process(delta):
     var target_loc = get_global_mouse_position()
