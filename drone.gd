@@ -10,7 +10,7 @@ var target = null
 
 func _ready():
     add_to_group("drones")
-    $AnimatedSprite.play()
+    $DriveSprite.play()
 
 func _physics_process(delta):
     var target_loc = get_global_mouse_position()
