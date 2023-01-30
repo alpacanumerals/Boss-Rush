@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/bg/road.png" type="Texture" id=1]
 [ext_resource path="res://sprites/bg/wheat01.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 150 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 82.5 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 10 )
@@ -76,10 +79,13 @@ centered = false
 position = Vector2( 160, 324 )
 collision_mask = 10
 
-[node name="Bounding Boxes" type="Area2D" parent="."]
+[node name="Bounding Boxes" type="KinematicBody2D" parent="."]
 position = Vector2( 650, 360 )
 collision_layer = 8
-input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounding Boxes"]
+[node name="Front" type="CollisionShape2D" parent="Bounding Boxes"]
 shape = SubResource( 1 )
+
+[node name="Rear" type="CollisionShape2D" parent="Bounding Boxes"]
+position = Vector2( -658, -37 )
+shape = SubResource( 2 )
