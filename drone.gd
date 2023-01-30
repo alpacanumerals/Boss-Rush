@@ -23,7 +23,7 @@ func _ready():
     $DriveSprite.play(drives[randi() % 4])
     $BatterySprite.play(batteries[randi() % 4])
     $WeaponSprite.play(weapons[0])
-    connect("drop_bomb", get_parent(), "_on_Drone_drop_bomb")
+    connect("drop_bomb", get_node("/root/Main"), "_on_Drone_drop_bomb")
 
 func _physics_process(delta):
     var target_loc = get_global_mouse_position()
@@ -40,7 +40,6 @@ func _physics_process(delta):
         handle_collision()
         
     if bombing_run_active:
-        #check location
         if target != null && position.distance_to(target) < 64:
             drop_bomb()
 
