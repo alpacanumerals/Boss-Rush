@@ -44,5 +44,4 @@ position = Vector2( 3.5, -9.5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2, 2 )
 frames = SubResource( 4 )
