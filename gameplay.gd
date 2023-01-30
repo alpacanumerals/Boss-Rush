@@ -1,10 +1,12 @@
 extends Node2D
 
 const drone = preload("res://Drone.tscn")
+const bomb = preload("res://Bomb.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    pass # Replace with function body.
+    for i in range(4):
+        add_drone()
 
 func _input(event):
     if event is InputEventKey and event.pressed:
@@ -25,7 +27,16 @@ func shoot_drone_at_train(): # this will be refactored into something more sensi
             drone.bombing_run(train_pos)
         i += 1
 
+func drop_bomb(position):
+    var b = bomb.instance()
+    add_child(b)
+    b.set_position(position)
+
 func add_drone():
     var d = drone.instance()
     add_child(d)
-    d.set_position(Vector2(0, 0))
+    var y_offset = randi() % 256
+    d.set_position(Vector2(-64, -64 + y_offset))
+
+func _on_Drone_drop_bomb(position):
+    drop_bomb(position)

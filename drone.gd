@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal drop_bomb(direction)
+
 var direction_to_target
 var velocity = Vector2()
 var accel = -50
@@ -21,6 +23,7 @@ func _ready():
     $DriveSprite.play(drives[randi() % 4])
     $BatterySprite.play(batteries[randi() % 4])
     $WeaponSprite.play(weapons[0])
+    connect("drop_bomb", get_parent(), "_on_Drone_drop_bomb")
 
 func _physics_process(delta):
     var target_loc = get_global_mouse_position()
@@ -54,6 +57,7 @@ func bombing_run(target):
     pass
 
 func drop_bomb():
+    emit_signal("drop_bomb", position)
     $WeaponSprite.play(weapons[3])
     bombing_run_active = false
     bombing_run_complete = true
