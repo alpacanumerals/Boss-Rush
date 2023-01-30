@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/truck/rwheel.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 109.5, 50 )
+extents = Vector2( 56, 24.5 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
@@ -65,7 +65,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 13.5, 3 )
+position = Vector2( -3, -5.5 )
 shape = SubResource( 1 )
 
 [node name="Chassis" type="AnimatedSprite" parent="."]

@@ -20,3 +20,5 @@ func process_movement_input():
     if Input.is_action_pressed("ui_left"):
         velocity.x -= accel_r
     velocity.x = clamp(velocity.x, -160, 80)
+    #if self.position.x <= 63 or self.position.x >=585:
+    #    velocity.x = 0
