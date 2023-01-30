@@ -15,38 +15,34 @@
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
 margin_right = 640.0
 margin_bottom = 360.0
-rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
 [node name="Wheat01" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 4320, 0 )
+motion_mirroring = Vector2( 1440, 0 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Wheat01"]
-position = Vector2( 0, 540 )
-scale = Vector2( 3, 3 )
+position = Vector2( 0, 180 )
 texture = ExtResource( 2 )
 centered = false
 
 [node name="Wheat02" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 4320, 0 )
+motion_mirroring = Vector2( 1440, 0 )
 script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Wheat02"]
-position = Vector2( 0, 675 )
-scale = Vector2( 3, 3 )
+position = Vector2( 0, 225 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Wheat03" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 4320, 0 )
+motion_mirroring = Vector2( 1440, 0 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Wheat03"]
-position = Vector2( 1, 810 )
-scale = Vector2( 3, 3 )
+position = Vector2( 0, 270 )
 texture = ExtResource( 1 )
 centered = false
