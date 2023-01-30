@@ -5,7 +5,8 @@ var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    $AnimatedSprite.play()
+    $FWheel.play()
+    $RWheel.play()
 
 
 func _physics_process(delta):

@@ -1,24 +1,30 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://train.gd" type="Script" id=1]
-[ext_resource path="res://sprites/buttons/newgame_mo2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/train/train01.png" type="Texture" id=2]
+[ext_resource path="res://sprites/train/train00.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 73.5, 25.5 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 93, 55 )
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 304, 75 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 93, 0, 93, 55 )
+region = Rect2( 0, 0, 304, 75 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -40,3 +46,4 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 4 )
+animation = "dead"

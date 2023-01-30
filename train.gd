@@ -1,4 +1,4 @@
 extends KinematicBody2D
 
 func _ready():
-    $AnimatedSprite.play()
+    $AnimatedSprite.play("default")
