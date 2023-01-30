@@ -266,6 +266,11 @@ animations = [ {
 "name": "gun",
 "speed": 5.0
 }, {
+"frames": [  ],
+"loop": true,
+"name": "none",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "warhead",
@@ -299,4 +304,4 @@ animation = "batt4"
 [node name="WeaponSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 8 )
 frames = SubResource( 14 )
-animation = "warhead"
+animation = "none"

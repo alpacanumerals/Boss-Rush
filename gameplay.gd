@@ -21,8 +21,8 @@ func shoot_drone_at_train(): # this will be refactored into something more sensi
     while !drone_dispatched && drones.size() > i:
         var drone = drones[i]
         if drone.target == null:
-            drone.assign_target(train_pos)
             drone_dispatched = true
+            drone.bombing_run(train_pos)
         i += 1
 
 func add_drone():
