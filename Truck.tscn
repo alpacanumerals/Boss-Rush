@@ -36,7 +36,7 @@ animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [sub_resource type="AtlasTexture" id=11]
@@ -54,11 +54,10 @@ animations = [ {
 "frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [node name="Truck" type="KinematicBody2D"]
-position = Vector2( 791, 510 )
 collision_mask = 2
 script = ExtResource( 2 )
 __meta__ = {
