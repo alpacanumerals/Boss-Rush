@@ -23,13 +23,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Top" type="Control" parent="VBoxContainer"]
-margin_right = 1920.0
+margin_right = 1091.0
 margin_bottom = 630.0
 rect_min_size = Vector2( 0, 630 )
 
 [node name="Mid" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 634.0
-margin_right = 1920.0
+margin_right = 1091.0
 margin_bottom = 807.0
 
 [node name="Left Mid" type="Control" parent="VBoxContainer/Mid"]
@@ -64,18 +64,18 @@ texture_hover = ExtResource( 6 )
 
 [node name="Middle Padding" type="Control" parent="VBoxContainer"]
 margin_top = 811.0
-margin_right = 1920.0
-margin_bottom = 884.0
+margin_right = 1091.0
+margin_bottom = 811.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Bot" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 888.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_top = 815.0
+margin_right = 1091.0
+margin_bottom = 1007.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Bot"]
-margin_right = 1920.0
+margin_right = 1091.0
 margin_bottom = 192.0
 size_flags_horizontal = 3
 
@@ -97,13 +97,13 @@ valign = 2
 
 [node name="bottom padding" type="Control" parent="VBoxContainer/Bot/HBoxContainer"]
 margin_left = 31.0
-margin_right = 876.0
+margin_right = 47.0
 margin_bottom = 192.0
 size_flags_horizontal = 3
 
 [node name="Title" type="TextureRect" parent="VBoxContainer/Bot/HBoxContainer"]
-margin_left = 880.0
-margin_right = 1920.0
+margin_left = 51.0
+margin_right = 1091.0
 margin_bottom = 192.0
 texture = ExtResource( 8 )
 
