@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://sprites/bg/wheat03.png" type="Texture" id=1]
+[ext_resource path="res://sprites/bg/road.png" type="Texture" id=1]
 [ext_resource path="res://sprites/bg/wheat01.png" type="Texture" id=2]
 [ext_resource path="res://sprites/bg/wheat02.png" type="Texture" id=3]
 [ext_resource path="res://sprites/bg/bg.png" type="Texture" id=4]
@@ -39,10 +39,10 @@ centered = false
 
 [node name="Wheat03" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 1440, 0 )
+motion_mirroring = Vector2( 640, 0 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Wheat03"]
-position = Vector2( 0, 270 )
+position = Vector2( 0, 306 )
 texture = ExtResource( 1 )
 centered = false
