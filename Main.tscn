@@ -58,7 +58,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Train" parent="." instance=ExtResource( 9 )]
-position = Vector2( 426, 287 )
+position = Vector2( 433, 292 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 0
