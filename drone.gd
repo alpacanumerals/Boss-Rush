@@ -63,7 +63,7 @@ func drop_bomb():
     $WeaponSprite.play(weapons[3])
     bombing_run_active = false
     bombing_run_complete = true
-    assign_target(Vector2(-160, 480))
+    assign_target(Vector2(-160, 160))
     
 func assign_collide(collide):
     # this is janky and maybe better handled by toggling collision shape or whatever

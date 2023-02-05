@@ -17,16 +17,17 @@ func _input(event):
 
 func shoot_drone_at_target(): # this will be refactored into something more sensible later <- bold claim
     var turrets = get_tree().get_nodes_in_group("turrets")
-    var train_pos = turrets[0].get_global_position()
-    var drones = get_tree().get_nodes_in_group("drones")
-    var drone_dispatched = false
-    var i = 0
-    while !drone_dispatched && drones.size() > i:
-        var drone = drones[i]
-        if drone.target == null:
-            drone_dispatched = true
-            drone.bombing_run(train_pos)
-        i += 1
+    if turrets.size() > 0:
+        var train_pos = turrets[0].get_global_position()
+        var drones = get_tree().get_nodes_in_group("drones")
+        var drone_dispatched = false
+        var i = 0
+        while !drone_dispatched && drones.size() > i:
+            var drone = drones[i]
+            if drone.target == null:
+                drone_dispatched = true
+                drone.bombing_run(train_pos)
+            i += 1
 
 func drop_bomb(position):
     var b = bomb.instance()
