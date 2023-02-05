@@ -14,9 +14,10 @@ func _physics_process(delta):
         velocity.y += gravity
         var collision = move_and_collide(velocity)
         if collision:
-            handle_collision()
+            handle_collision(collision.collider)
 
-func handle_collision():
+func handle_collision(collider):
+    collider.hit_by_bullet()
     $AnimatedSprite.play("explode")
     $CollisionShape2D.disabled = true
     live = false

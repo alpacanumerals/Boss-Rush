@@ -40,14 +40,17 @@ func _physics_process(delta):
         handle_collision()
         
     if bombing_run_active:
-        if target != null && position.distance_to(target) < 64:
-            drop_bomb()
+        check_targeting()
 
 func assign_target(new_target):
     #accel = -20
     #speed_limit = 1000
     target = new_target
     #assign_collide(true)
+    
+func check_targeting():
+    if target != null && abs(position.x - target.x) < 16 && position.y < target.y:
+        drop_bomb()
 
 func bombing_run(target):
     var above_target = Vector2(target.x, 64)

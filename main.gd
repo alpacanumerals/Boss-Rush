@@ -11,12 +11,13 @@ func _ready():
 func _input(event):
     if event is InputEventKey and event.pressed:
         if event.scancode == KEY_F:
-            shoot_drone_at_train()
+            shoot_drone_at_target()
         if event.scancode == KEY_A:
             add_drone()
 
-func shoot_drone_at_train(): # this will be refactored into something more sensible later. it's exploratory
-    var train_pos = $Train.get_global_position()
+func shoot_drone_at_target(): # this will be refactored into something more sensible later <- bold claim
+    var turrets = get_tree().get_nodes_in_group("turrets")
+    var train_pos = turrets[0].get_global_position()
     var drones = get_tree().get_nodes_in_group("drones")
     var drone_dispatched = false
     var i = 0
