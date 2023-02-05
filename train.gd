@@ -33,11 +33,8 @@ func car_explode():
     live = false
 
 func scatter_explosion():
-    print("ping")
     var x_loc = (randi() % 400) - 200
     var y_loc = (randi() % 100) - 50
-    #var explode_loc = 
-    
     var e = explosion.instance()
     add_child(e)
     e.set_position(Vector2(x_loc, y_loc))
