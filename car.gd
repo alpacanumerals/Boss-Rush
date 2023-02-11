@@ -3,7 +3,6 @@ extends KinematicBody2D
 signal killed
 var explosion = preload("res://Explosion.tscn")
 
-var velocity = Vector2(-0.1, 0)
 var live = false
 var dead = false
 
@@ -14,7 +13,6 @@ func _ready():
     connect("killed", get_parent(), "_on_Car_killed")
 
 func _physics_process(delta):
-    move_and_collide(velocity)
     if dead:
         explosion_timer += 1
         if explosion_timer > 10:
@@ -32,7 +30,6 @@ func _on_Turret_killed():
         car_explode()
 
 func car_explode():
-    velocity = Vector2(-2, 0)
     $AnimatedSprite.play("broken")
     live = false
     dead = true
