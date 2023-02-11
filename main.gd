@@ -16,7 +16,7 @@ func _input(event):
             add_drone()
 
 func shoot_drone_at_target(): # this will be refactored into something more sensible later <- bold claim
-    var turrets = get_tree().get_nodes_in_group("turrets")
+    var turrets = get_tree().get_nodes_in_group("live_turrets")
     if turrets.size() > 0:
         var train_pos = turrets[0].get_global_position()
         var drones = get_tree().get_nodes_in_group("drones")
