@@ -25,3 +25,6 @@ func process_movement_input():
     velocity.x = clamp(velocity.x, -160, 90)
     #if self.position.x <= 63 or self.position.x >=585:
     #    velocity.x = 0
+
+func hit_by_enemy():
+    pass
