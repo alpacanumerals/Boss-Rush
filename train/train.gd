@@ -4,6 +4,7 @@ const car = preload("res://train/Car.tscn")
 const car_size = 410
 
 var current_car = 0
+var started = false
 
 var target_x = 430
 
@@ -11,9 +12,11 @@ func _ready():
     add_car(0)
     add_car(1)
     add_car(2)
-    activate(current_car)
     
 func _physics_process(delta):
+    if !started:
+        activate(current_car)
+        started = true
     move_to_target(delta)
 
 func move_to_target(delta):

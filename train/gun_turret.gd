@@ -6,7 +6,7 @@ var shoot_rate = 3
 var shoot_timer = 0
 var shoot_offset = Vector2()
 
-var target = Vector2()
+var target
 var direction_to_target
 
 func _ready():
@@ -20,7 +20,7 @@ func _ready():
 
 func _physics_process(delta):
     if live:
-        direction_to_target = global_position.angle_to_point(target)
+        direction_to_target = global_position.angle_to_point(target.global_position)
         
         aim()
         shoot_timer += delta
@@ -30,23 +30,27 @@ func _physics_process(delta):
 
 func aim():
     var ang = direction_to_target/PI
-    if (ang > 1/8 && ang < 3/8):
+    if (ang > 1.0/8 && ang < 3.0/8):
         $AnimatedSprite.set_frame(0)
-    if (ang > 3/8 && ang < 5/8):
+    if (ang > 3.0/8 && ang < 5.0/8):
         $AnimatedSprite.set_frame(6)
-    if (ang > 5/8 && ang < 7/8):
+    if (ang > 5.0/8 && ang < 7.0/8):
         $AnimatedSprite.set_frame(3)
-    if (ang > 7/8 || ang < -7/8):
+    if (ang > 7.0/8 || ang < -7.0/8):
         $AnimatedSprite.set_frame(4)
-    if (ang < 1/8 && ang > -1/8):
+    if (ang < 1.0/8 && ang > -1.0/8):
         $AnimatedSprite.set_frame(1)
-    if (ang < -1/8 && ang > -3/8):
+    if (ang < -1.0/8 && ang > -3.0/8):
         $AnimatedSprite.set_frame(2)
-    if (ang < -3/8 && ang > -5/8):
+    if (ang < -3.0/8 && ang > -5.0/8):
         $AnimatedSprite.set_frame(8)
-    if (ang < -5/8 && ang > -7/8):
+    if (ang < -5.0/8 && ang > -7.0/8):
         $AnimatedSprite.set_frame(5)
 
 func shoot():
     var shot_origin = global_position + shoot_offset
     emit_signal("shoot_bullet", shoot_offset, direction_to_target)
+
+func activate():
+    target = get_tree().get_nodes_in_group("cursor")[0]
+    .activate()
