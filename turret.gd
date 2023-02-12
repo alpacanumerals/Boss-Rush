@@ -1,16 +1,16 @@
 extends KinematicBody2D
 
 signal killed
-signal shoot_rocket(location)
+signal shoot_mortar(location)
 
 var live = false
 
 func _ready():
-    $AnimatedSprite.play("default")
+    $AnimatedSprite.play("mortar")
     connect("killed", get_parent(), "_on_Turret_killed")
 
     var main_node = get_tree().get_nodes_in_group("main")[0]
-    connect("killed", main_node, "_on_Turret_shoot_rocket")
+    connect("shoot_mortar", main_node, "_on_Turret_shoot_mortar")
 
 func activate():
     add_to_group("live_turrets")
@@ -27,5 +27,8 @@ func handle_kill():
     $CollisionShape2D.disabled = true
     emit_signal("killed")
 
-func shoot_rocket():
-    emit_signal("shoot_rocket", position)
+func shoot_gun():
+    pass
+
+func shoot_mortar():
+    emit_signal("shoot_mortar", position)

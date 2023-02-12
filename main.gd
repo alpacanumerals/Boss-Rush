@@ -51,8 +51,11 @@ func add_drone():
 func _on_Drone_drop_bomb(position):
     drop_bomb(position)
 
-func _on_Turret_shoot_rocket(position):
-    shoot_rocket(position, $FrontLayer/Truck.position)
+func _on_Turret_shoot_mortar(position):
+    shoot_mortar(position, $FrontLayer/Truck.position)
 
-func shoot_rocket(position, target):
+func shoot_mortar(position, target):
     var m = mortar.instance()
+    $FrontLayer.add_child(m)
+    m.set_position(position)
+    m.set_target(target)

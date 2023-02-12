@@ -116,7 +116,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 19 ) ],
 "loop": true,
-"name": "rocket",
+"name": "mortar",
 "speed": 5.0
 } ]
 
@@ -161,4 +161,4 @@ shape = SubResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Turret2"]
 frames = SubResource( 12 )
-animation = "rocket"
+animation = "mortar"
