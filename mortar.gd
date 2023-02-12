@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const max_suspend_time = 3
+const max_suspend_time = 1
 var suspend_time = 0
 
 var ascending = true
@@ -16,9 +16,9 @@ func _physics_process(delta):
     if ascending:
         if position.y < -10:
             ascending = false
-        velocity.y = -5
+        velocity.y = -10
     if descending:
-        velocity.y = 5
+        velocity.y = 10
         if position.y > 360:
             queue_free()
     if !ascending && !descending:

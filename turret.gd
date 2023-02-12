@@ -5,12 +5,22 @@ signal shoot_mortar(location)
 
 var live = false
 
+var shoot_rate = 3
+var shoot_timer = 0
+
 func _ready():
     $AnimatedSprite.play("mortar")
     connect("killed", get_parent(), "_on_Turret_killed")
 
     var main_node = get_tree().get_nodes_in_group("main")[0]
     connect("shoot_mortar", main_node, "_on_Turret_shoot_mortar")
+
+func _physics_process(delta):
+    if live:
+        shoot_timer += delta
+        if shoot_timer > shoot_rate:
+            shoot_timer = 0
+            shoot_mortar()
 
 func activate():
     add_to_group("live_turrets")
@@ -31,4 +41,4 @@ func shoot_gun():
     pass
 
 func shoot_mortar():
-    emit_signal("shoot_mortar", position)
+    emit_signal("shoot_mortar", global_position)
