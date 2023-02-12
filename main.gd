@@ -1,15 +1,11 @@
 extends Node
 
-signal count_drones
-
 const drone = preload("res://Drone.tscn")
 const bomb = preload("res://Bomb.tscn")
 const mortar = preload("res://Mortar.tscn")
 
 var d_stock = 100
-signal count_drones
-
-
+signal count_drones(d_stock)
 
 # Called when the node enters the scene tree for the first time.
 
@@ -53,7 +49,7 @@ func add_drone():
     var y_offset = randi() % 256
     d.set_position(Vector2(-64, -64 + y_offset))
     d_stock -= 1
-    emit_signal("count_drones")
+    emit_signal("count_drones",d_stock)
 
 func _on_Drone_drop_bomb(position):
     drop_bomb(position)
