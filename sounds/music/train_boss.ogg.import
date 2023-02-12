@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/train_boss.ogg-a17d6a5de3351490f8fe730868d5dceb.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/train_boss.ogg"
+dest_files=[ "res://.import/train_boss.ogg-a17d6a5de3351490f8fe730868d5dceb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

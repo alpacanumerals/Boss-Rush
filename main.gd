@@ -4,12 +4,15 @@ const drone = preload("res://Drone.tscn")
 const bomb = preload("res://Bomb.tscn")
 const mortar = preload("res://Mortar.tscn")
 
+var d_stock = 100
+
 # Called when the node enters the scene tree for the first time.
 
 func _enter_tree():
     add_to_group("main")
 
 func _ready():
+    music.play_a_music()
     for i in range(4):
         add_drone()
 
