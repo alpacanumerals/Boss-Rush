@@ -34,7 +34,7 @@ func _physics_process(delta):
             scatter_fires()
 
 func _on_Turret_killed():
-    var turrets = get_tree().get_nodes_in_group("turrets")
+    var turrets = get_tree().get_nodes_in_group("live_turrets")
     var turrets_alive = 0
     for turret in turrets:
         if turret.live:
