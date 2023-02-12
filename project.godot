@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Turret",
+"language": "GDScript",
+"path": "res://classes/turret.gd"
+} ]
+_global_script_class_icons={
+"Turret": ""
+}
+
 [application]
 
 config/name="Boss Rush"
