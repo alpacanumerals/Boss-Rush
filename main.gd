@@ -5,6 +5,7 @@ const bomb = preload("res://Bomb.tscn")
 const mortar = preload("res://Mortar.tscn")
 
 var d_stock = 100
+signal count_drones
 
 # Called when the node enters the scene tree for the first time.
 
