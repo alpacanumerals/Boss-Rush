@@ -70,7 +70,6 @@ func activate():
     live = true
     var kids = get_children()
     for kid in kids:
-        print(kid.has_method("activate"))
         if kid.has_method("activate"):
             kid.activate()
 
