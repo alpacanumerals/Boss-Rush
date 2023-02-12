@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Main_count_drones(d_stock):
+    print("ping")
     set_text(str(d_stock))
