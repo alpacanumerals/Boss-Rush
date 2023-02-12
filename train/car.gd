@@ -4,6 +4,8 @@ signal killed
 var explosion = preload("res://projectiles/Explosion.tscn")
 var fire = preload("res://projectiles/Fire.tscn")
 
+var mortar_turret = preload("res://train/MortarTurret.tscn")
+
 var live = false
 var dead = false
 var burnout = false
@@ -17,6 +19,8 @@ var burnout_timer = 0
 func _ready():
     $AnimatedSprite.play("default")
     connect("killed", get_parent(), "_on_Car_killed")
+    add_turret(0)
+    add_turret(1)
 
 func _physics_process(delta):
     if dead:
@@ -64,4 +68,8 @@ func scatter_fire():
 
 func activate():
     live = true
-    $Turret1.activate()
+
+func add_turret(number):
+    var m_t = mortar_turret.instance()
+    add_child(m_t)
+    m_t.set_position(Vector2(-176 + 32*number, -38))
