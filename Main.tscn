@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/bg/road.png" type="Texture" id=1]
 [ext_resource path="res://sprites/bg/forest_fg.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Train.tscn" type="PackedScene" id=9]
 [ext_resource path="res://main.gd" type="Script" id=10]
 [ext_resource path="res://sprites/dicon.png" type="Texture" id=11]
+[ext_resource path="res://d_stock_label.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 150 )
@@ -100,7 +101,7 @@ margin_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer"]
 margin_right = 40.0
-margin_bottom = 20.0
+margin_bottom = 40.0
 rect_min_size = Vector2( 40, 20 )
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panel"]
@@ -119,8 +120,8 @@ margin_bottom = 16.0
 texture = ExtResource( 11 )
 
 [node name="d_stock_label" type="Label" parent="HBoxContainer/Panel/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
 margin_left = 20.0
 margin_top = 1.0
 margin_right = 20.0
 margin_bottom = 15.0
+script = ExtResource( 12 )
