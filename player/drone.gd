@@ -26,7 +26,8 @@ func _ready():
     connect("drop_bomb", get_node("/root/Main"), "_on_Drone_drop_bomb")
 
 func _physics_process(delta):
-    var target_loc = get_global_mouse_position()
+    # it would be better to only need to initialise this once
+    var target_loc = get_tree().get_nodes_in_group("cursor")[0].global_position
     if target != null:
         target_loc = target
     direction_to_target = global_position.angle_to_point(target_loc)

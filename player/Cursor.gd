@@ -4,7 +4,7 @@ var velocity = Vector2()
 const speed = 250
 
 func _ready():
-    pass # Replace with function body.
+    add_to_group("cursor")
 
 func _process(delta):
     process_movement_input()
