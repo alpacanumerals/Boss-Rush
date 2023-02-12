@@ -1,8 +1,8 @@
 extends Node
 
-const drone = preload("res://Drone.tscn")
-const bomb = preload("res://Bomb.tscn")
-const mortar = preload("res://Mortar.tscn")
+const drone = preload("res://player/Drone.tscn")
+const bomb = preload("res://projectiles/Bomb.tscn")
+const mortar = preload("res://projectiles/Mortar.tscn")
 
 var d_stock = 100
 signal count_drones(d_stock)

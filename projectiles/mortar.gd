@@ -32,7 +32,9 @@ func _physics_process(delta):
         handle_collision(collision.collider)
     
 func handle_collision(collider):
-    pass
+    collider.hit_by_enemy()
+    $AnimatedSprite.play("explode")
+    $CollisionShape2D.disabled = true
 
 func set_target(new_target):
     target = new_target

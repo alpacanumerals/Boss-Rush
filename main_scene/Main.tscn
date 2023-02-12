@@ -4,14 +4,14 @@
 [ext_resource path="res://sprites/bg/forest_fg.png" type="Texture" id=2]
 [ext_resource path="res://sprites/bg/forest_bg.png" type="Texture" id=3]
 [ext_resource path="res://sprites/bg/bg.png" type="Texture" id=4]
-[ext_resource path="res://Wheat03.gd" type="Script" id=5]
-[ext_resource path="res://Wheat02.gd" type="Script" id=6]
-[ext_resource path="res://Wheat01.gd" type="Script" id=7]
-[ext_resource path="res://Truck.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Train.tscn" type="PackedScene" id=9]
-[ext_resource path="res://main.gd" type="Script" id=10]
+[ext_resource path="res://main_scene/Wheat03.gd" type="Script" id=5]
+[ext_resource path="res://main_scene/Wheat02.gd" type="Script" id=6]
+[ext_resource path="res://main_scene/Wheat01.gd" type="Script" id=7]
+[ext_resource path="res://player/Truck.tscn" type="PackedScene" id=8]
+[ext_resource path="res://train/Train.tscn" type="PackedScene" id=9]
+[ext_resource path="res://main_scene/main.gd" type="Script" id=10]
 [ext_resource path="res://sprites/dicon.png" type="Texture" id=11]
-[ext_resource path="res://d_stock_label.gd" type="Script" id=12]
+[ext_resource path="res://main_scene/d_stock_label.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 150 )
@@ -125,5 +125,3 @@ margin_top = 1.0
 margin_right = 20.0
 margin_bottom = 15.0
 script = ExtResource( 12 )
-
-[connection signal="count_drones" from="." to="HBoxContainer/Panel/MarginContainer/HBoxContainer/d_stock_label" method="_on_Main_count_drones"]

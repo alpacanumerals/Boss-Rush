@@ -1,6 +1,6 @@
 extends Node2D
 
-const car = preload("res://Car.tscn")
+const car = preload("res://train/Car.tscn")
 const car_size = 410
 
 var current_car = 0

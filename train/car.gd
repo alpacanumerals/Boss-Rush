@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 signal killed
-var explosion = preload("res://Explosion.tscn")
+var explosion = preload("res://projectiles/Explosion.tscn")
 
 var live = false
 var dead = false

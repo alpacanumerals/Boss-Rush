@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/truck/truck.png" type="Texture" id=1]
-[ext_resource path="res://truck.gd" type="Script" id=2]
+[ext_resource path="res://player/truck.gd" type="Script" id=2]
 [ext_resource path="res://sprites/truck/fwheel.png" type="Texture" id=3]
 [ext_resource path="res://sprites/truck/rwheel.png" type="Texture" id=4]
 

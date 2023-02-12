@@ -1,43 +1,43 @@
 [gd_scene load_steps=55 format=2]
 
-[ext_resource path="res://sprites/droneparts/drive01.png" type="Texture" id=1]
-[ext_resource path="res://drone.gd" type="Script" id=2]
-[ext_resource path="res://sprites/droneparts/body01.png" type="Texture" id=3]
-[ext_resource path="res://sprites/droneparts/battery01.png" type="Texture" id=4]
-[ext_resource path="res://sprites/droneparts/bomb01.png" type="Texture" id=5]
-[ext_resource path="res://sprites/droneparts/battery02.png" type="Texture" id=6]
+[ext_resource path="res://sprites/droneparts/bomb01.png" type="Texture" id=1]
+[ext_resource path="res://sprites/droneparts/drive03.png" type="Texture" id=2]
+[ext_resource path="res://sprites/droneparts/body04.png" type="Texture" id=3]
+[ext_resource path="res://sprites/droneparts/body02.png" type="Texture" id=4]
+[ext_resource path="res://sprites/droneparts/body01.png" type="Texture" id=5]
+[ext_resource path="res://sprites/droneparts/warhead01.png" type="Texture" id=6]
 [ext_resource path="res://sprites/droneparts/battery04.png" type="Texture" id=7]
-[ext_resource path="res://sprites/droneparts/body04.png" type="Texture" id=8]
-[ext_resource path="res://sprites/droneparts/drive03.png" type="Texture" id=9]
-[ext_resource path="res://sprites/droneparts/body02.png" type="Texture" id=10]
-[ext_resource path="res://sprites/droneparts/warhead01.png" type="Texture" id=11]
-[ext_resource path="res://sprites/droneparts/body03.png" type="Texture" id=12]
-[ext_resource path="res://sprites/droneparts/drive02.png" type="Texture" id=13]
-[ext_resource path="res://sprites/droneparts/drive04.png" type="Texture" id=14]
-[ext_resource path="res://sprites/droneparts/battery03.png" type="Texture" id=15]
-[ext_resource path="res://sprites/droneparts/gun01.png" type="Texture" id=16]
+[ext_resource path="res://sprites/droneparts/battery02.png" type="Texture" id=8]
+[ext_resource path="res://sprites/droneparts/battery01.png" type="Texture" id=9]
+[ext_resource path="res://sprites/droneparts/drive01.png" type="Texture" id=10]
+[ext_resource path="res://sprites/droneparts/body03.png" type="Texture" id=11]
+[ext_resource path="res://sprites/droneparts/battery03.png" type="Texture" id=12]
+[ext_resource path="res://sprites/droneparts/drive04.png" type="Texture" id=13]
+[ext_resource path="res://sprites/droneparts/drive02.png" type="Texture" id=14]
+[ext_resource path="res://sprites/droneparts/gun01.png" type="Texture" id=15]
+[ext_resource path="res://player/drone.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 4 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 10 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 8 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="SpriteFrames" id=3]
@@ -65,122 +65,122 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 10 )
 region = Rect2( 16, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 10 )
 region = Rect2( 32, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 10 )
 region = Rect2( 48, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 10 )
 region = Rect2( 64, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 1 )
+atlas = ExtResource( 10 )
 region = Rect2( 80, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 16, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 32, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 48, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 64, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 80, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 9 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
-atlas = ExtResource( 9 )
+atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 9 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 9 )
+atlas = ExtResource( 2 )
 region = Rect2( 48, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
-atlas = ExtResource( 9 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
-atlas = ExtResource( 9 )
+atlas = ExtResource( 2 )
 region = Rect2( 80, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=32]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 13 )
 region = Rect2( 16, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=33]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 13 )
 region = Rect2( 32, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 13 )
 region = Rect2( 48, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 13 )
 region = Rect2( 64, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 13 )
 region = Rect2( 80, 0, 16, 8 )
 
 [sub_resource type="SpriteFrames" id=10]
@@ -208,17 +208,17 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 4 )
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=38]
 flags = 4
-atlas = ExtResource( 15 )
+atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="AtlasTexture" id=39]
@@ -251,7 +251,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 8 )
 
 [sub_resource type="SpriteFrames" id=14]
@@ -261,7 +261,7 @@ animations = [ {
 "name": "bomb",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "gun",
 "speed": 5.0
@@ -271,7 +271,7 @@ animations = [ {
 "name": "none",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "warhead",
 "speed": 5.0
@@ -280,7 +280,7 @@ animations = [ {
 [node name="Drone" type="KinematicBody2D"]
 position = Vector2( 1029, 592 )
 collision_mask = 2
-script = ExtResource( 2 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
