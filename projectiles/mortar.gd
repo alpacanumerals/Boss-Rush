@@ -5,6 +5,7 @@ var suspend_time = 0
 
 var ascending = true
 var descending = false
+var live = true
 
 var target = Vector2()
 
@@ -13,6 +14,8 @@ func _ready():
 
 func _physics_process(delta):
     var velocity = Vector2()
+    if !live:
+        return
     if ascending:
         if position.y < -10:
             ascending = false
@@ -33,8 +36,15 @@ func _physics_process(delta):
     
 func handle_collision(collider):
     collider.hit_by_enemy()
+    ascending = false
+    descending = false
+    live = false
     $AnimatedSprite.play("explode")
     $CollisionShape2D.disabled = true
 
 func set_target(new_target):
     target = new_target
+
+func _on_AnimatedSprite_animation_finished():
+    if !live:
+        queue_free()
