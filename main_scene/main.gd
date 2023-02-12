@@ -61,7 +61,9 @@ func _on_Turret_shoot_mortar(position):
 func shoot_mortar(position, target):
     var l = mortar_poof.instance()
     var m = mortar.instance()
+    var s = 1 
     $FrontLayer.add_child(l)
+    l.set_position(position)
     $FrontLayer.add_child(m)
     m.set_position(position)
     m.set_target(target)
