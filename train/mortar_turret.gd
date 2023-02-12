@@ -4,7 +4,6 @@ signal shoot_mortar(location)
 
 var shoot_rate = 3
 var shoot_timer = 0
-var shoot_offset
 
 func _ready():
     $AnimatedSprite.play("mortar")
@@ -22,6 +21,6 @@ func _physics_process(delta):
             shoot()
 
 func shoot():
-    shoot_offset = global_position
+    var shoot_offset = global_position
     shoot_offset.y -= 7.75
     emit_signal("shoot_mortar", shoot_offset)

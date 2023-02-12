@@ -4,6 +4,7 @@ signal killed
 var explosion = preload("res://projectiles/Explosion.tscn")
 var fire = preload("res://projectiles/Fire.tscn")
 
+var gun_turret = preload("res://train/GunTurret.tscn")
 var mortar_turret = preload("res://train/MortarTurret.tscn")
 
 var live = false
@@ -74,6 +75,6 @@ func activate():
             kid.activate()
 
 func add_turret(number):
-    var m_t = mortar_turret.instance()
+    var m_t = gun_turret.instance()
     add_child(m_t)
     m_t.set_position(Vector2(-176 + 32*number, -38))
