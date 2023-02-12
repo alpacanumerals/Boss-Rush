@@ -13,10 +13,6 @@ func _ready():
     connect("shoot_mortar", main_node, "_on_Turret_shoot_mortar")
     
     shoot_timer = float(randi() % 20)/10
-    
-    shoot_offset = global_position
-    shoot_offset.x -= 3.3
-    shoot_offset.y -= 7.75
 
 func _physics_process(delta):
     if live:
@@ -26,5 +22,6 @@ func _physics_process(delta):
             shoot()
 
 func shoot():
+    shoot_offset = global_position
+    shoot_offset.y -= 7.75
     emit_signal("shoot_mortar", shoot_offset)
-    #emit_signal("shoot_mortar", global_position)

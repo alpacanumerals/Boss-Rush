@@ -19,8 +19,8 @@ var burnout_timer = 0
 func _ready():
     $AnimatedSprite.play("default")
     connect("killed", get_parent(), "_on_Car_killed")
-    add_turret(0)
-    add_turret(1)
+    for i in range(12):
+        add_turret(i)
 
 func _physics_process(delta):
     if dead:
@@ -68,6 +68,11 @@ func scatter_fire():
 
 func activate():
     live = true
+    var kids = get_children()
+    for kid in kids:
+        print(kid.has_method("activate"))
+        if kid.has_method("activate"):
+            kid.activate()
 
 func add_turret(number):
     var m_t = mortar_turret.instance()
