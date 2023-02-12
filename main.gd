@@ -2,8 +2,13 @@ extends Node
 
 const drone = preload("res://Drone.tscn")
 const bomb = preload("res://Bomb.tscn")
+const rocket = preload("res://Rocket.tscn")
 
 # Called when the node enters the scene tree for the first time.
+
+func _enter_tree():
+    add_to_group("main")
+
 func _ready():
     for i in range(4):
         add_drone()
@@ -42,3 +47,9 @@ func add_drone():
 
 func _on_Drone_drop_bomb(position):
     drop_bomb(position)
+
+func _on_Turret_shoot_rocket(position):
+    shoot_rocket(position, $FrontLayer/Truck.position)
+
+func shoot_rocket(position, target):
+    var r = rocket.instance()

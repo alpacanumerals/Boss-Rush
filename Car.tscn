@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://car.gd" type="Script" id=1]
 [ext_resource path="res://sprites/train/train01.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://turret.gd" type="Script" id=4]
 [ext_resource path="res://sprites/projectiles/fire.png" type="Texture" id=5]
 [ext_resource path="res://sprites/train/train00.png" type="Texture" id=6]
+[ext_resource path="res://sprites/train/turret_rocket.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 73.5, 25.5 )
@@ -96,6 +97,11 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
@@ -107,15 +113,17 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 19 ) ],
+"loop": true,
+"name": "rocket",
+"speed": 5.0
 } ]
 
 [node name="Car" type="KinematicBody2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 8 )
@@ -138,3 +146,19 @@ shape = SubResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Turret1"]
 frames = SubResource( 12 )
+
+[node name="Turret2" type="KinematicBody2D" parent="."]
+position = Vector2( -144, -38 )
+collision_layer = 4
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turret2"]
+position = Vector2( 0.5, -0.5 )
+shape = SubResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Turret2"]
+frames = SubResource( 12 )
+animation = "rocket"
