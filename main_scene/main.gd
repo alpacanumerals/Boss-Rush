@@ -3,6 +3,7 @@ extends Node
 const drone = preload("res://player/Drone.tscn")
 const bomb = preload("res://projectiles/Bomb.tscn")
 const mortar = preload("res://projectiles/Mortar.tscn")
+const mortar_poof = preload("res://projectiles/Smoke1.tscn")
 
 var d_stock = 100
 signal count_drones(d_stock)
@@ -58,7 +59,12 @@ func _on_Turret_shoot_mortar(position):
     shoot_mortar(position, $FrontLayer/Truck.position)
 
 func shoot_mortar(position, target):
+    var l = mortar_poof.instance()
     var m = mortar.instance()
+    var s = 1 
+    $FrontLayer.add_child(l)
+    l.set_position(position)
     $FrontLayer.add_child(m)
     m.set_position(position)
     m.set_target(target)
+    
