@@ -18,9 +18,9 @@ func _ready():
 
 func _input(event):
     if event is InputEventKey and event.pressed:
-        if event.scancode == KEY_F:
+        if event.scancode == KEY_SPACE:
             shoot_drone_at_target()
-        if event.scancode == KEY_A:
+        if event.scancode == KEY_SHIFT:
             add_drone()
 
 func shoot_drone_at_target(): # this will be refactored into something more sensible later <- bold claim
@@ -47,6 +47,7 @@ func add_drone():
     $FrontLayer.add_child(d)
     var y_offset = randi() % 256
     d.set_position(Vector2(-64, -64 + y_offset))
+    d_stock -= 1
 
 func _on_Drone_drop_bomb(position):
     drop_bomb(position)
