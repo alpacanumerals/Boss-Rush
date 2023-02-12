@@ -2,7 +2,7 @@ extends Node
 
 const drone = preload("res://Drone.tscn")
 const bomb = preload("res://Bomb.tscn")
-const rocket = preload("res://Rocket.tscn")
+const mortar = preload("res://Mortar.tscn")
 
 # Called when the node enters the scene tree for the first time.
 
@@ -52,4 +52,4 @@ func _on_Turret_shoot_rocket(position):
     shoot_rocket(position, $FrontLayer/Truck.position)
 
 func shoot_rocket(position, target):
-    var r = rocket.instance()
+    var m = mortar.instance()
