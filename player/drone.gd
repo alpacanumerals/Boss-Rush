@@ -53,8 +53,8 @@ func check_targeting():
     if target != null && abs(position.x - target.x) < 16 && position.y < target.y:
         drop_bomb()
 
-func bombing_run(target):
-    var above_target = Vector2(target.x, 64)
+func bombing_run(new_target):
+    var above_target = Vector2(new_target.x, 64)
     assign_target(above_target)
     bombing_run_active = true
     pass
