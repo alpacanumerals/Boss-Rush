@@ -11,6 +11,7 @@ var target = Vector2()
 
 func _ready():
     add_to_group("mortars")
+    $Telegraph.set_visible(false)
 
 func _physics_process(delta):
     var velocity = Vector2()
@@ -26,6 +27,8 @@ func _physics_process(delta):
             queue_free()
     if !ascending && !descending:
         suspend_time += delta
+        $Telegraph.set_visible(true)
+        $Telegraph.set_global_position(Vector2(target.x, 340))
         if suspend_time > max_suspend_time:
             position.x = target.x
             descending = true
@@ -39,6 +42,7 @@ func handle_collision(collider):
     ascending = false
     descending = false
     live = false
+    $Telegraph.set_visible(false)
     $AnimatedSprite.play("explode")
     $CollisionShape2D.disabled = true
 
