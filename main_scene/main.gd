@@ -49,6 +49,8 @@ func drop_bomb(position):
     b.set_position(position)
 
 func add_drone():
+    if d_stock <= 0:
+        return
     var d = drone.instance()
     $FrontLayer.add_child(d)
     var y_offset = randi() % 256
