@@ -96,6 +96,5 @@ func shoot_mortar(position, target):
     m.set_target(target)
 
 func _on_GameOver():
-    pass
-    #print("in theory we just game overed")
+    print("in theory we just game overed")
     
