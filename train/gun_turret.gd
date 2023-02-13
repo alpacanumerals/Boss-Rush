@@ -49,7 +49,7 @@ func aim():
 
 func shoot():
     var shot_origin = global_position + shoot_offset
-    emit_signal("shoot_bullet", shoot_offset, direction_to_target)
+    emit_signal("shoot_bullet", shot_origin, direction_to_target)
 
 func activate():
     target = get_tree().get_nodes_in_group("cursor")[0]
