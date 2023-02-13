@@ -46,6 +46,8 @@ func shoot_drone_at_target(): # this will be refactored into something more sens
             i += 1
 
 func add_drone():
+    if d_stock <= 0:
+        return
     var d = drone.instance()
     $FrontLayer.add_child(d)
     var y_offset = randi() % 256
