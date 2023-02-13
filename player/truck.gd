@@ -13,6 +13,7 @@ func _ready():
     $FWheel.play()
     $RWheel.play()
     hp = 1
+    add_to_group("truck")
 
 func _physics_process(delta):
     process_movement_input()

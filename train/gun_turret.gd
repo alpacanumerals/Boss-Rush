@@ -20,6 +20,11 @@ func _ready():
 
 func _physics_process(delta):
     if live:
+        target = get_tree().get_nodes_in_group("cursor")[0]
+        var drone_count = get_tree().get_nodes_in_group("drones").size()
+        if drone_count == 0:
+            target = get_tree().get_nodes_in_group("truck")[0]
+        
         direction_to_target = global_position.angle_to_point(target.global_position)
         
         aim()

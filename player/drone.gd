@@ -45,8 +45,8 @@ func _physics_process(delta):
     velocity = velocity.limit_length(speed_limit)
     
     var collision = move_and_collide(velocity * delta)
-    if collision:
-        handle_collision()
+    #if collision:
+    #    handle_collision()
         
     if bombing_run_active:
         check_targeting()

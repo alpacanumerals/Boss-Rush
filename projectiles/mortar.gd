@@ -38,6 +38,7 @@ func _physics_process(delta):
         handle_collision(collision.collider)
     
 func handle_collision(collider):
+    print(collider)
     collider.hit_by_enemy()
     ascending = false
     descending = false
@@ -45,6 +46,15 @@ func handle_collision(collider):
     $Telegraph.set_visible(false)
     $AnimatedSprite.play("explode")
     $CollisionShape2D.disabled = true
+
+func hit_by_bullet():
+    ascending = false
+    descending = false
+    live = false
+    $Telegraph.set_visible(false)
+    $AnimatedSprite.play("explode")
+    $CollisionShape2D.disabled = true
+    
 
 func set_target(new_target):
     target = new_target
