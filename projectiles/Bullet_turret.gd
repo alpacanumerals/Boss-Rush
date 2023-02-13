@@ -1,13 +1,12 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
+export (int) var speed = 100
 var velocity = Vector2()
 var timer
 
 func _ready():
     add_to_group("bullets")
     timer = 0.0
-    connect("body_entered", self, "HitResolution") 
     
 func _process(delta):
     #Safety despawns
@@ -19,10 +18,11 @@ func _process(delta):
     if timer > 12.0:
         queue_free()
     velocity = Vector2(-speed*delta, 0).rotated(rotation)
-    position = position + velocity
+    var collision = move_and_collide(velocity)
+    if collision:
+        handle_collision(collision.collider)
     
-
-func HitResolution(body):
-    if body.has_method("hit_by_enemy"):
-        body.hit_by_enemy()
-    timer += 12.0
+func handle_collision(collider):
+    if collider.has_method("hit_by_enemy"):
+        collider.hit_by_enemy()
+    queue_free()
