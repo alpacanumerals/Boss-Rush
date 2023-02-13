@@ -53,4 +53,6 @@ func shoot():
 
 func activate():
     target = get_tree().get_nodes_in_group("cursor")[0]
+    #if you see this mal, this calls the 'activate' function in the base 'turret' class
+    #which was overridden by the function of the same name here in the derived class
     .activate()
