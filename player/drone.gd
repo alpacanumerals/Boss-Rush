@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal drop_bomb(direction)
+signal restock_drone
 
 var direction_to_target
 var velocity = Vector2()
@@ -24,8 +25,13 @@ func _ready():
     $BatterySprite.play(batteries[randi() % 4])
     $WeaponSprite.play(weapons[0])
     connect("drop_bomb", get_node("/root/Main"), "_on_Drone_drop_bomb")
+    connect("restock_drone", get_node("/root/Main"), "_on_Drone_restock_drone")
 
 func _physics_process(delta):
+    if bombing_run_complete:
+        if position.x < -100:
+            emit_signal("restock_drone")
+            queue_free()
     # it would be better to only need to initialise this once
     var target_loc = get_tree().get_nodes_in_group("cursor")[0].global_position
     if target != null:
@@ -42,6 +48,7 @@ func _physics_process(delta):
         
     if bombing_run_active:
         check_targeting()
+    
 
 func assign_target(new_target):
     #accel = -20

@@ -57,7 +57,11 @@ func add_drone():
 
 func _on_Drone_drop_bomb(position):
     drop_bomb(position)
-
+    
+func _on_Drone_restock_drone():
+    d_stock += 1
+    emit_signal("count_drones",d_stock)
+    
 func drop_bomb(position):
     var b = bomb.instance()
     add_child(b)
