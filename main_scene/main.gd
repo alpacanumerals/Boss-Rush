@@ -71,7 +71,8 @@ func shoot_bullet(position, angle, b):
     b.rotation = angle
 
 func _on_Turret_shoot_mortar(position):
-    shoot_mortar(position, $FrontLayer/Truck.position)
+    var truck_loc = $FrontLayer/Truck.position
+    shoot_mortar(position, truck_loc)
 
 func shoot_mortar(position, target):
     var l = mortar_poof.instance()

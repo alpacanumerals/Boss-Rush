@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
 signal killed
-var explosion = preload("res://projectiles/Explosion.tscn")
-var fire = preload("res://projectiles/Fire.tscn")
+const explosion = preload("res://projectiles/Explosion.tscn")
+const fire = preload("res://projectiles/Fire.tscn")
 
-var gun_turret = preload("res://train/GunTurret.tscn")
-var mortar_turret = preload("res://train/MortarTurret.tscn")
+const gun_turret = preload("res://train/GunTurret.tscn")
+const mortar_turret = preload("res://train/MortarTurret.tscn")
+const turrets = [gun_turret, mortar_turret]
 
 var live = false
 var dead = false
@@ -75,6 +76,7 @@ func activate():
             kid.activate()
 
 func add_turret(number):
-    var m_t = gun_turret.instance()
+    var selector = randi() % 2
+    var m_t = turrets[selector].instance()
     add_child(m_t)
     m_t.set_position(Vector2(-176 + 32*number, -38))
