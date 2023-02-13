@@ -13,6 +13,8 @@ var target = null
 var bombing_run_active = false
 var bombing_run_complete = false
 
+var live = true
+
 const bodies = ["body1", "body2", "body3", "body4"]
 const drives = ["drive1", "drive2", "drive3", "drive4"]
 const batteries = ["batt1", "batt2", "batt3", "batt4"]
@@ -49,7 +51,6 @@ func _physics_process(delta):
     if bombing_run_active:
         check_targeting()
     
-
 func assign_target(new_target):
     #accel = -20
     #speed_limit = 1000
@@ -79,8 +80,9 @@ func assign_collide(collide):
     set_collision_mask_bit(2, collide)
 
 func handle_collision():
-    print("Wham!")
-    queue_free()
+    if live:
+        live = false
+        explode()
 
 func get_thrust_vector():
     return Vector2(accel, 0).rotated(direction_to_target)
@@ -92,3 +94,19 @@ func get_drag_vector(velocity):
     var drag = speed * speed * resistance
     var drag_vector = -1 * velocity.normalized() * drag
     return drag_vector
+
+func hit_by_enemy():
+    if live:
+        live = false
+        explode()
+
+func explode():
+    $BodySprite.play("explode")
+    $DriveSprite.play("explode")
+    $BatterySprite.play("explode")
+    $WeaponSprite.play("explode")
+    $CollisionShape2D.disabled = true
+
+func _on_BodySprite_animation_finished():
+    if !live:
+        queue_free()
