@@ -4,12 +4,15 @@ var accel_f= 2
 var accel_r= 8
 var decel = 4
 var velocity = Vector2()
+var hp
+
+signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     $FWheel.play()
     $RWheel.play()
-
+    hp = 1
 
 func _physics_process(delta):
     process_movement_input()
@@ -27,4 +30,6 @@ func process_movement_input():
     #    velocity.x = 0
 
 func hit_by_enemy():
-    pass
+    hp -= 1
+    if hp <= 0:
+        emit_signal("game_over")

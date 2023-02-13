@@ -4,6 +4,7 @@ const drone = preload("res://player/Drone.tscn")
 const bomb = preload("res://projectiles/Bomb.tscn")
 const mortar = preload("res://projectiles/Mortar.tscn")
 const mortar_poof = preload("res://projectiles/Smoke1.tscn")
+const game_over_scene = preload("res://GameOver.tscn")
 
 var d_stock = 100
 signal count_drones(d_stock)
@@ -17,6 +18,9 @@ func _ready():
     music.play_a_music()
     for i in range(4):
         add_drone()
+    #Hooking up game_over from Truck.tscn
+    var truck = get_node("Truck")
+    truck.connect("game_over", self, "_on_GameOver")
 
 func _input(event):
     if event is InputEventKey and event.pressed:
@@ -67,4 +71,7 @@ func shoot_mortar(position, target):
     $FrontLayer.add_child(m)
     m.set_position(position)
     m.set_target(target)
+    
+func _on_GameOver():
+    print("in theory we just game overed")
     
