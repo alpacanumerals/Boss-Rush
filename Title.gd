@@ -50,4 +50,5 @@ func _on_NewGame_mouse_entered():
 
 func _on_NewGame_pressed():
     sounds.ui_confirm()
+    settings.cars = 0
     switcher.switch_scene("res://main_scene/Main.tscn")

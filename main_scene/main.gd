@@ -9,6 +9,7 @@ const game_over_scene = preload("res://GameOver.tscn")
 
 var d_stock = 100
 signal count_drones(d_stock)
+signal count_cars
 
 # Called when the node enters the scene tree for the first time.
 
@@ -17,6 +18,7 @@ func _enter_tree():
 
 func _ready():
     music.play_a_music()
+    emit_signal("count_cars")
     for i in range(4):
         add_drone()
     #Hooking up game_over from Truck.tscn
@@ -61,6 +63,9 @@ func _on_Drone_drop_bomb(position):
 func _on_Drone_restock_drone():
     d_stock += 1
     emit_signal("count_drones",d_stock)
+
+func _on_Car_check():
+    emit_signal("count_cars")
     
 func drop_bomb(position):
     var b = bomb.instance()

@@ -1,5 +1,6 @@
 extends Node2D
 
+signal check_cars
 const car = preload("res://train/Car.tscn")
 const car_size = 410
 
@@ -12,6 +13,7 @@ func _ready():
     add_car(0)
     add_car(1)
     add_car(2)
+    connect("check_cars", get_parent(), "_on_Car_check")
     
 func _physics_process(delta):
     if !started:
@@ -33,6 +35,8 @@ func add_car(number):
     
 func _on_Car_killed():
     current_car += 1
+    settings.cars += 1
+    emit_signal("check_cars")
     activate(current_car)
     target_x -= car_size
 
