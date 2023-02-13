@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/bg/road.png" type="Texture" id=1]
 [ext_resource path="res://sprites/bg/forest_fg.png" type="Texture" id=2]
@@ -19,6 +19,18 @@ extents = Vector2( 11, 150 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 82.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 222.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 204.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 385, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 345, 10 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 10 )
@@ -129,7 +141,27 @@ script = ExtResource( 12 )
 
 [node name="Cursor" parent="." instance=ExtResource( 13 )]
 position = Vector2( 155, 86 )
-collision_layer = 0
-collision_mask = 0
+collision_layer = 256
+collision_mask = 256
+
+[node name="CursorBounds" type="KinematicBody2D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorBounds"]
+position = Vector2( -10, 222.5 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CursorBounds"]
+position = Vector2( 650, 195.5 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CursorBounds"]
+position = Vector2( 365, -10 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CursorBounds"]
+position = Vector2( 330, 371 )
+shape = SubResource( 6 )
 
 [connection signal="count_drones" from="." to="HBoxContainer/Panel/MarginContainer/HBoxContainer/d_stock_label" method="_on_Main_count_drones"]
