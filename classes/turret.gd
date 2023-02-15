@@ -21,3 +21,6 @@ func handle_kill():
     $AnimatedSprite.play("burn")
     $CollisionShape2D.disabled = true
     emit_signal("killed")
+
+func remove():
+    queue_free()

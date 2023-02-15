@@ -17,7 +17,8 @@ func _physics_process(delta):
             handle_collision(collision.collider)
 
 func handle_collision(collider):
-    collider.hit_by_bullet() 
+    if collider.has_method("hit_by_bullet"):
+        collider.hit_by_bullet() 
     $AnimatedSprite.play("explode")
     $CollisionShape2D.disabled = true
     live = false

@@ -43,7 +43,14 @@ func _on_Turret_killed():
             turrets_alive += 1
     if turrets_alive <= 0:
         emit_signal("killed")
+        remove_turrets()
         car_explode()
+
+func remove_turrets():
+    var kids = get_children()
+    for kid in kids:
+        if kid.has_method("remove"):
+            kid.remove()
 
 func car_explode():
     $AnimatedSprite.play("broken")
@@ -63,7 +70,7 @@ func scatter_fires():
     
 func scatter_fire():
     var x_loc = (randi() % 400) - 200
-    var y_loc = (randi() % 100) - 50
+    var y_loc = (randi() % 75) - 50
     var f = fire.instance()
     add_child(f)
     f.set_position(Vector2(x_loc, y_loc))
