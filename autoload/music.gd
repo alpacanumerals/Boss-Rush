@@ -10,13 +10,13 @@ func _ready():
     add_child(Orchestrion) 
 
 func play_title():
-    var music = load("res://sounds/music/dmusic.mp3")
+    var music = load("res://sounds/music/train_title.ogg")
     Orchestrion.set_bus("Music")
     Orchestrion.set_stream(music)
     Orchestrion.play()
     
 func play_a_music():
-    var music = load("res://sounds/music/train_boss.ogg")
+    var music = load("res://sounds/music/train_boss_maj.ogg")
     Orchestrion.set_bus("Music")
     Orchestrion.set_stream(music)
     Orchestrion.play()
