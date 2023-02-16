@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/train/turret_mortar.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6.5, 8 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
@@ -99,6 +99,7 @@ animations = [ {
 [node name="GunTurret" type="KinematicBody2D"]
 position = Vector2( -176, -38 )
 collision_layer = 4
+collision_mask = 0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
