@@ -12,6 +12,8 @@ var live = false
 var dead = false
 var burnout = false
 
+var number = 0
+
 var explosion_interval = 0.1
 var burnout_limit = 5
 
@@ -25,6 +27,8 @@ func _ready():
         add_turret(i)
 
 func _physics_process(delta):
+    if global_position.x < -500:
+        queue_free()
     if dead:
         explosion_timer += delta
         burnout_timer += delta
