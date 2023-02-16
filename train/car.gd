@@ -87,9 +87,13 @@ func activate():
             kid.activate()
 
 func add_turret(tnum):
+    var selector
     if number+1 > tnum:
-        var selector = randi() % 2
-        var rounder = (number/10)*10
+        if number < 2:
+            selector = 0
+        else:    
+            selector = randi() % 2
+        var rounder = (number/10)
         var m_t = turrets[selector].instance()
         add_child(m_t)
         m_t.set_position(Vector2(-176 + 32*tnum, -38))

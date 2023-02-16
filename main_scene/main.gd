@@ -8,6 +8,8 @@ const mortar_poof = preload("res://projectiles/Smoke1.tscn")
 const game_over_scene = preload("res://GameOver.tscn")
 
 var d_stock = 100
+const d_regen = 2
+var d_timer = 0
 signal count_drones(d_stock)
 signal count_cars
 
@@ -25,6 +27,14 @@ func _ready():
     var truck = $FrontLayer/Truck
     truck.connect("game_over", self, "_on_GameOver")
 
+func _process(delta):
+    d_timer += delta
+    if d_timer > d_regen:
+        d_timer = 0
+        if d_stock < 500:
+            d_stock += 1
+            emit_signal("count_drones",d_stock)
+            
 func _input(event):
     if event is InputEventKey and event.pressed:
         if event.scancode == KEY_SPACE:
