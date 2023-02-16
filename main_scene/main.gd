@@ -8,7 +8,7 @@ const mortar_poof = preload("res://projectiles/Smoke1.tscn")
 const game_over_scene = preload("res://GameOver.tscn")
 
 var d_stock = 100
-const d_regen = 2
+const d_regen = 6
 var d_timer = 0
 signal count_drones(d_stock)
 signal count_cars
