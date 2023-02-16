@@ -106,5 +106,5 @@ func shoot_mortar(position, target):
     m.set_target(target)
 
 func _on_GameOver():
-    print("in theory we just game overed")
+    switcher.switch_scene("res://GameOver.tscn")
     

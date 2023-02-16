@@ -11,7 +11,7 @@ func _ready():
 
     var main_node = get_tree().get_nodes_in_group("main")[0]
     connect("shoot_mortar", main_node, "_on_Turret_shoot_mortar")
-    
+
     shoot_timer = float(randi() % 20)/10
 
 func _physics_process(delta):
