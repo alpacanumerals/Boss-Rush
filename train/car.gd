@@ -12,7 +12,7 @@ var live = false
 var dead = false
 var burnout = false
 
-var number = 0
+var number:int = 0
 
 var explosion_interval = 0.1
 var burnout_limit = 5
@@ -25,7 +25,7 @@ func _ready():
     connect("killed", get_parent(), "_on_Car_killed")
     for i in range(12):
         add_turret(i)
-
+    
 func _physics_process(delta):
     if global_position.x < -500:
         queue_free()
@@ -86,8 +86,14 @@ func activate():
         if kid.has_method("activate"):
             kid.activate()
 
-func add_turret(number):
-    var selector = randi() % 2
-    var m_t = turrets[selector].instance()
-    add_child(m_t)
-    m_t.set_position(Vector2(-176 + 32*number, -38))
+func add_turret(tnum):
+    if number+1 > tnum:
+        var selector = randi() % 2
+        var rounder = (number/10)*10
+        var m_t = turrets[selector].instance()
+        add_child(m_t)
+        m_t.set_position(Vector2(-176 + 32*tnum, -38))
+        m_t.shoot_rate = 4 - number/20
+        m_t.hard = rounder
+    else: 
+        pass

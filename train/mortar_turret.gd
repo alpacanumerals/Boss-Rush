@@ -2,8 +2,9 @@ extends Turret
 
 signal shoot_mortar(location)
 
-var shoot_rate = 3
+var shoot_rate
 var shoot_timer = 0
+var hard = 0
 
 func _ready():
     $AnimatedSprite.play("mortar")

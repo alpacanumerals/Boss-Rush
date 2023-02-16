@@ -2,9 +2,11 @@ extends Turret
 
 signal shoot_bullet(location, angle)
 
-var shoot_rate = 3
+var shoot_rate:float
 var shoot_timer = 0
 var shoot_offset = Vector2()
+var hard = 0
+var burst
 
 var target
 var direction_to_target
@@ -17,6 +19,7 @@ func _ready():
     connect("shoot_bullet", main_node, "_on_Turret_shoot_bullet")
     
     shoot_timer = float(randi() % 20)/10
+    burst = hard
 
 func _physics_process(delta):
     if live:
@@ -30,7 +33,12 @@ func _physics_process(delta):
         aim()
         shoot_timer += delta
         if shoot_timer > shoot_rate:
-            shoot_timer = 0
+            if burst > 0:
+                shoot_timer = shoot_rate - 0.1
+                burst -= 1
+            else:
+                shoot_timer = 0
+                burst = hard
             shoot()
 
 func aim():
