@@ -20,9 +20,9 @@ func _physics_process(delta):
     if ascending:
         if position.y < -10:
             ascending = false
-        velocity.y = -10
+        velocity.y = -7
     if descending:
-        velocity.y = 10
+        velocity.y = 7
         if position.y > 360:
             queue_free()
     if !ascending && !descending:
