@@ -62,8 +62,7 @@ func check_targeting():
         drop_bomb()
 
 func bombing_run(new_target):
-    var above_target = Vector2(new_target.x, 64)
-    assign_target(above_target)
+    assign_target(new_target)
     bombing_run_active = true
     pass
 
