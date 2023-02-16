@@ -28,7 +28,6 @@ func _physics_process(delta):
     if !ascending && !descending:
         suspend_time += delta
         $Telegraph.set_visible(true)
-        $Telegraph.set_global_position(Vector2(target.x, 340))
         if suspend_time > max_suspend_time:
             position.x = target.x
             descending = true
@@ -36,6 +35,7 @@ func _physics_process(delta):
     var collision = move_and_collide(velocity)
     if collision:
         handle_collision(collision.collider)
+    $Telegraph.set_global_position(Vector2(target.x, 340))
     
 func handle_collision(collider):
     collider.hit_by_enemy()
