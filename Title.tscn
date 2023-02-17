@@ -118,7 +118,7 @@ size_flags_vertical = 3
 margin_top = 4.0
 margin_right = 27.0
 margin_bottom = 18.0
-text = "v0.0"
+text = "v1.0"
 valign = 2
 
 [node name="bottom padding" type="Control" parent="VBoxContainer/Bot/HBoxContainer"]
